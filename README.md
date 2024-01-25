@@ -1,24 +1,76 @@
-# README
+## Tea Subscription Service API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Overview
+This Rails API is a backend system for a Tea Subscription Service, allowing users to manage their tea subscriptions.
 
-Things you may want to cover:
+### Features
+Subscribe: Allows customers to subscribe to a tea subscription.
+Cancel Subscription: Enables customers to cancel their tea subscriptions.
+View Subscriptions: Customers can view all their subscriptions, both active and cancelled.
 
-* Ruby version
+### Getting Started
+You will need:
+Ruby on Rails
+PostgreSQL
 
-* System dependencies
+### Installation
+Clone the repo
+```
+git clone git@github.com:brendan-bondurant/tea_intermission.git
+```
+### Install gem packages
 
-* Configuration
+Gems Used
+Pry
+Simplecov
+FactoryBot
+Faker
+Rspec
+Capybara
+JSONapi Serializer
 
-* Database creation
+Run `bundle install`
 
-* Database initialization
+### Usage
+Endpoints
 
-* How to run the test suite
+1. Subscribe to a Tea Subscription
+[POST] /api/v1/subscriptions
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Cancel a Tea Subscription
+[DELETE] /api/v1/subscriptions/:id
 
-* Deployment instructions
+3. View Customer's Subscriptions
+[GET] /api/v1/customers/:id/subscriptions
 
-* ...
+Response Example:
+json
+```
+{
+    "data": {
+        "customer": {
+            "first_name": "Numbers",
+            "last_name": "Green",
+            ...
+        },
+        "subscribed_to": [
+            {
+                "title": "Basic",
+                ...
+                "teas": [
+                      {
+                        "title": "green",
+                          ...
+                      }
+                  ]
+            },
+            ...
+        ]
+    }
+}
+```
+### Running the Tests
+Execute the test suite with:
+```
+bundle exec rspec
+```
