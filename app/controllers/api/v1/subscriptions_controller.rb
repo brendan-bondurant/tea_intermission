@@ -1,5 +1,5 @@
 class Api::V1::SubscriptionsController < ApplicationController
-  def index
-    
+  def show
+
   end
 end
