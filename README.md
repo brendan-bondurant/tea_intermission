@@ -35,10 +35,10 @@ Run `bundle install`
 Endpoints
 
 1. Subscribe to a Tea Subscription
-[POST] /api/v1/subscriptions
+[POST] /api/v1/customers/:id/subscriptions/:id
 
 2. Cancel a Tea Subscription
-[DELETE] /api/v1/subscriptions/:id
+[DELETE] /api/v1/customers/:id/subscriptions/:id
 
 3. View Customer's Subscriptions
 [GET] /api/v1/customers/:id/subscriptions
