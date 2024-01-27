@@ -74,3 +74,4 @@ Execute the test suite with:
 ```
 bundle exec rspec
 ```
+Many of the API endpoints were also tested using postman.
