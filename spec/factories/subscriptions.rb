@@ -4,6 +4,5 @@ FactoryBot.define do
     price { Faker::Number.number(digits: 1) }
     status { ["subscribed", "cancelled"].sample }
     frequency { ["weekly", "bi-weekly", "monthly", "bi-monthly"].sample }
-    customer
   end
 end
