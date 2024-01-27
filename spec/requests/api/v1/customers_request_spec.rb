@@ -6,7 +6,7 @@ describe 'customer API' do
     
     3.times do |subs|
       subscription = @customer.subscriptions.create!(title: "Subscription #{subs}", price: 10, status: "active", frequency: "monthly")
-
+      @customer.subscriptions << subscription
       5.times do |type|
         tea = Tea.create!(title: "Tea #{type}", description: "Description #{type}", temp: 100, brew_time: "5 minutes")
         SubscriptionTea.create!(subscription: subscription, tea: tea)
@@ -39,7 +39,10 @@ describe 'customer API' do
 
     expect(customer[:customer]).to have_key(:address)
     expect(customer[:customer][:address]).to be_a(String)
+
+    expect(customer[:subscribed_to]).to be_an(Array)
     expect(customer[:subscribed_to].first.keys).to eq([:title, :price, :status, :frequency, :teas])
+    expect(customer[:subscribed_to].first[:teas]).to be_an(Array)
     expect(customer[:subscribed_to].first[:teas].first.keys).to eq([:title, :description, :temp, :brew_time])
   end
 
