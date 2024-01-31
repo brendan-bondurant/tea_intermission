@@ -27,7 +27,7 @@ class Api::V1::SubscriptionsController < ApplicationController
       subscription.status = "active"
       customer.subscriptions << subscription
       render json: {
-        message: "You are now subscribed to #{sub}",
+        message: "You are now subscribed to #{subscription.title}",
         customer: customer,
         subscription: subscription
       }, status: :ok
@@ -40,7 +40,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     if customer.subscriptions.exists?(subscription.id) && subscription.status == "active"
       subscription.update(status: "canceled")
       render json: {
-        message: 'You are no longer subscribed to this',
+        message: 'You are no longer subscribed to this package',
         customer: customer, 
         subscription: subscription
       }, status: :ok
