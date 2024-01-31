@@ -21,13 +21,13 @@ git clone git@github.com:brendan-bondurant/tea_intermission.git
 ### Install gem packages
 
 Gems Used
-Pry
-Simplecov
-FactoryBot
-Faker
-Rspec
-Capybara
-JSONapi Serializer
+Pry <br>
+Simplecov <br>
+FactoryBot <br>
+Faker <br>
+Rspec <br>
+Capybara <br>
+JSONapi Serializer <br>
 
 Run `bundle install`
 
